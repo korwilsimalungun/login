@@ -225,3 +225,26 @@ font-size:20px;
 
 }
 
+body::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#6c7cff55,transparent 70%);
+top:-150px;
+left:-150px;
+filter:blur(80px);
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#8a6bff55,transparent 70%);
+bottom:-150px;
+right:-150px;
+filter:blur(80px);
+z-index:-1;
+}
