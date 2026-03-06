@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard SPPG</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background: radial-gradient(circle,#0f2a55,#06172f 70%);
+color:white;
+text-align:center;
+}
+
+.container{
+max-width:700px;
+}
+
+h1{
+font-size:36px;
+}
+
+button{
+padding:12px 24px;
+border:none;
+border-radius:8px;
+background:linear-gradient(90deg,#6c7cff,#8a6bff);
+color:white;
+cursor:pointer;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Dashboard Sistem</h2>
+
+<h1>SPPG Wilayah Simalungun</h1>
+
+<p>
+Sistem monitoring dan pelaporan wilayah.
+</p>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "APIKEY",
+  authDomain: "database-login-korwil.firebaseapp.com",
+  projectId: "database-login-korwil",
+  storageBucket: "database-login-korwil.firebasestorage.app",
+  messagingSenderId: "663218835658",
+  appId: "1:663218835658:web:6aef61ba7e8c19415ba433"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth,(user)=>{
+
+if(!user){
+
+window.location.href="index.html";
+
+}
+
+});
+
+window.logout=function(){
+
+signOut(auth).then(()=>{
+
+window.location.href="index.html";
+
+})
+
+}
+
+</script>
+
+</body>
+</html>
