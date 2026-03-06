@@ -9,81 +9,6 @@
 <title>Layanan Terpadu Dashboard SPPG Simalungun</title>
 
 <link rel="stylesheet" href="dashboard.css">
-  
-</head>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI, sans-serif;
-}
-
-body{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-background: radial-gradient(circle at center,#0f2a55,#06172f 70%);
-color:white;
-overflow:hidden;
-}
-
-/* loading screen */
-
-#loading{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-display:flex;
-align-items:center;
-justify-content:center;
-background: radial-gradient(circle,#0f2a55,#06172f 70%);
-font-size:18px;
-letter-spacing:1px;
-}
-
-/* dashboard */
-
-#dashboard{
-display:none;
-width:700px;
-padding:50px;
-border-radius:18px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(20px);
-box-shadow:0 0 30px rgba(0,0,0,.4);
-text-align:center;
-}
-
-h1{
-font-size:32px;
-margin-bottom:10px;
-}
-
-p{
-opacity:.8;
-margin-bottom:30px;
-}
-
-button{
-padding:12px 25px;
-border:none;
-border-radius:8px;
-font-size:15px;
-font-weight:600;
-background:linear-gradient(90deg,#6c7cff,#8a6bff);
-color:white;
-cursor:pointer;
-}
-
-button:hover{
-box-shadow:0 0 15px rgba(110,130,255,.6);
-}
-
-</style>
 
 </head>
 
@@ -97,28 +22,53 @@ Memverifikasi login...
 <!-- dashboard -->
 <div id="dashboard">
 
-<!-- SERVICES -->
-<section id="services" class="services">
-  <h2>Layanan Terpadu</h2>
-  <p class="section-desc">
-    Selamat Datang di sistem pendukung operasional dan pelaporan SPPG.
-  </p>
+<section id="services">
 
-  <div class="card-container">
-    <a href="https://sipgn-sipsmo-web.bgn.go.id/Sign" class="card">DIALUR</a>
-    <a href="https://portal.bgn.go.id/sign-in" class="card">Absensi</a>
-    <a href="https://drive.google.com/file/d/1Iefqv3EqnmOCzjWzftPbaNkk7c99Z3Yj/view" class="card">Petunjuk Teknis (JUKNIS) 2026</a>
-    <a href="https://drive.google.com/drive/folders/163Cg4URMrin6HEYXpg3Aa_R_vRr4kA2Q" class="card">Data Laporan SPPG</a>
-    <a href="https://drive.google.com/drive/folders/1eqPSRYmRGWpL2vtuBdZuXppIDDU-3Ah-" class="card">Aplikasi Laporan Keuangan</a>
-    <a href="https://drive.google.com/file/d/1IEHK48OfcEVLctS1VhwjEBuISdrraTEm/view" class="card">File Operasional</a>
-    <a href="https://birosdmo.bgn.go.id/login" class="card">Biro SDMO</a>
-    <a href="https://tauwascare.tauwas.bgn.go.id/login" class="card">Tauwas Care</a>
-    <a href="https://kppgmedan-terpadu.web.app/#" class="card">Website Resmi KPPG Medan</a>
-    <a href="https://chat.whatsapp.com/GFEzTezJDaLKNjopGDUgUy?mode=gi_t" class="card">Grup WhatsApp AG/AK</a>
-  </div>
-</section>
+<h2>Layanan Terpadu</h2>
+
+<p class="section-desc">
+Selamat Datang di sistem pendukung operasional dan pelaporan SPPG.
+</p>
+
+<div class="card-container">
+
+<a href="https://sipgn-sipsmo-web.bgn.go.id/Sign" class="card">DIALUR</a>
+
+<a href="https://portal.bgn.go.id/sign-in" class="card">Absensi</a>
+
+<a href="https://drive.google.com/file/d/1Iefqv3EqnmOCzjWzftPbaNkk7c99Z3Yj/view" class="card">
+Petunjuk Teknis (JUKNIS) 2026
+</a>
+
+<a href="https://drive.google.com/drive/folders/163Cg4URMrin6HEYXpg3Aa_R_vRr4kA2Q" class="card">
+Data Laporan SPPG
+</a>
+
+<a href="https://drive.google.com/drive/folders/1eqPSRYmRGWpL2vtuBdZuXppIDDU-3Ah-" class="card">
+Aplikasi Laporan Keuangan
+</a>
+
+<a href="https://drive.google.com/file/d/1IEHK48OfcEVLctS1VhwjEBuISdrraTEm/view" class="card">
+File Operasional
+</a>
+
+<a href="https://birosdmo.bgn.go.id/login" class="card">Biro SDMO</a>
+
+<a href="https://tauwascare.tauwas.bgn.go.id/login" class="card">Tauwas Care</a>
+
+<a href="https://kppgmedan-terpadu.web.app/#" class="card">
+Website Resmi KPPG Medan
+</a>
+
+<a href="https://chat.whatsapp.com/GFEzTezJDaLKNjopGDUgUy?mode=gi_t" class="card">
+Grup WhatsApp AG/AK
+</a>
+
+</div>
 
 <button onclick="logout()">Logout</button>
+
+</section>
 
 </div>
 
@@ -143,7 +93,6 @@ messagingSenderId: "663218835658",
 appId: "1:663218835658:web:6aef61ba7e8c19415ba433",
 measurementId: "G-7RYVCT1HKX"
 };
-
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -181,3 +130,4 @@ window.location.href="index.html";
 
 </body>
 </html>
+
