@@ -2,6 +2,7 @@
 <html lang="id">
 
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,36 +33,44 @@ Selamat Datang di sistem pendukung operasional dan pelaporan SPPG.
 
 <div class="card-container">
 
-<a href="https://sipgn-sipsmo-web.bgn.go.id/Sign" class="card">DIALUR</a>
+<a href="https://sipgn-sipsmo-web.bgn.go.id/Sign" class="card">
+<span>DIALUR</span>
+</a>
 
-<a href="https://portal.bgn.go.id/sign-in" class="card">Absensi</a>
+<a href="https://portal.bgn.go.id/sign-in" class="card">
+<span>Absensi</span>
+</a>
 
 <a href="https://drive.google.com/file/d/1Iefqv3EqnmOCzjWzftPbaNkk7c99Z3Yj/view" class="card">
-Petunjuk Teknis (JUKNIS) 2026
+<span>Petunjuk Teknis (JUKNIS) 2026</span>
 </a>
 
 <a href="https://drive.google.com/drive/folders/163Cg4URMrin6HEYXpg3Aa_R_vRr4kA2Q" class="card">
-Data Laporan SPPG
+<span>Data Laporan SPPG</span>
 </a>
 
 <a href="https://drive.google.com/drive/folders/1eqPSRYmRGWpL2vtuBdZuXppIDDU-3Ah-" class="card">
-Aplikasi Laporan Keuangan
+<span>Aplikasi Laporan Keuangan</span>
 </a>
 
 <a href="https://drive.google.com/file/d/1IEHK48OfcEVLctS1VhwjEBuISdrraTEm/view" class="card">
-File Operasional
+<span>File Operasional</span>
 </a>
 
-<a href="https://birosdmo.bgn.go.id/login" class="card">Biro SDMO</a>
+<a href="https://birosdmo.bgn.go.id/login" class="card">
+<span>Biro SDMO</span>
+</a>
 
-<a href="https://tauwascare.tauwas.bgn.go.id/login" class="card">Tauwas Care</a>
+<a href="https://tauwascare.tauwas.bgn.go.id/login" class="card">
+<span>Tauwas Care</span>
+</a>
 
 <a href="https://kppgmedan-terpadu.web.app/#" class="card">
-Website Resmi KPPG Medan
+<span>Website Resmi KPPG Medan</span>
 </a>
 
 <a href="https://chat.whatsapp.com/GFEzTezJDaLKNjopGDUgUy?mode=gi_t" class="card">
-Grup WhatsApp AG/AK
+<span>Grup WhatsApp AG/AK</span>
 </a>
 
 </div>
@@ -106,6 +115,8 @@ if(user){
 
 document.getElementById("loading").style.display="none";
 document.getElementById("dashboard").style.display="block";
+document.getElementById("dashboard").classList.add("show");
+
 
 }else{
 
