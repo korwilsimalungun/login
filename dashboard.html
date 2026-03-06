@@ -4,38 +4,59 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard SPPG</title>
+<title>Dashboard SPPG Simalungun</title>
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Segoe UI;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+}
+
+body{
 height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-background: radial-gradient(circle,#0f2a55,#06172f 70%);
+background: radial-gradient(circle at center,#0f2a55,#06172f 70%);
 color:white;
 text-align:center;
 }
 
 .container{
-max-width:700px;
+width:700px;
+padding:50px;
+border-radius:20px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+box-shadow:0 0 30px rgba(0,0,0,.4);
 }
 
 h1{
-font-size:36px;
+font-size:34px;
+margin-bottom:10px;
+}
+
+p{
+opacity:.8;
+margin-bottom:30px;
 }
 
 button{
-padding:12px 24px;
+padding:12px 25px;
 border:none;
 border-radius:8px;
+font-size:15px;
+font-weight:600;
 background:linear-gradient(90deg,#6c7cff,#8a6bff);
 color:white;
 cursor:pointer;
-margin-top:20px;
+}
+
+button:hover{
+box-shadow:0 0 15px rgba(110,130,255,.6);
 }
 
 </style>
@@ -46,17 +67,17 @@ margin-top:20px;
 
 <div class="container">
 
-<h2>Dashboard Sistem</h2>
-
-<h1>SPPG Wilayah Simalungun</h1>
+<h1>Dashboard Sistem</h1>
 
 <p>
-Sistem monitoring dan pelaporan wilayah.
+Selamat datang di Sistem Informasi  
+SPPG Wilayah Simalungun
 </p>
 
 <button onclick="logout()">Logout</button>
 
 </div>
+
 
 <script type="module">
 
@@ -64,26 +85,31 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/fireba
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "APIKEY",
+  apiKey: "AIzaSyAmoNVzD8HtmN0I6phr_y_tU3sLoqCzyNw",
   authDomain: "database-login-korwil.firebaseapp.com",
   projectId: "database-login-korwil",
   storageBucket: "database-login-korwil.firebasestorage.app",
   messagingSenderId: "663218835658",
-  appId: "1:663218835658:web:6aef61ba7e8c19415ba433"
+  appId: "1:663218835658:web:6aef61ba7e8c19415ba433",
+  measurementId: "G-7RYVCT1HKX"
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+
 onAuthStateChanged(auth,(user)=>{
 
 if(!user){
+
+alert("Anda harus login terlebih dahulu");
 
 window.location.href="index.html";
 
 }
 
 });
+
 
 window.logout=function(){
 
