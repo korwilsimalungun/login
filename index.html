@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login SPPG</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background: radial-gradient(circle at center,#0f2a55,#06172f 70%);
+color:white;
+overflow:hidden;
+}
+
+/* animated glow background */
+
+body::before{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background: radial-gradient(circle,#3b6cff55,transparent 70%);
+filter:blur(120px);
+animation: glowMove 10s infinite alternate;
+}
+
+@keyframes glowMove{
+0%{transform:translate(-200px,-100px)}
+100%{transform:translate(200px,100px)}
+}
+
+/* login card */
+
+.login-card{
+position:relative;
+width:380px;
+padding:40px;
+border-radius:16px;
+
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(18px);
+
+box-shadow:
+0 0 20px rgba(0,0,0,0.4),
+0 0 40px rgba(90,120,255,0.1);
+
+text-align:center;
+}
+
+/* logo */
+
+.logo{
+width:60px;
+margin-bottom:15px;
+}
+
+/* title */
+
+h1{
+font-size:26px;
+margin-bottom:6px;
+}
+
+.subtitle{
+font-size:13px;
+opacity:.7;
+margin-bottom:25px;
+}
+
+/* input */
+
+.input{
+margin-bottom:18px;
+}
+
+.input input{
+
+width:100%;
+padding:12px;
+
+border:none;
+border-radius:8px;
+
+background:rgba(255,255,255,0.08);
+
+color:white;
+font-size:14px;
+
+outline:none;
+}
+
+/* button */
+
+button{
+
+width:100%;
+padding:12px;
+
+border:none;
+border-radius:8px;
+
+font-size:15px;
+font-weight:600;
+
+background:linear-gradient(90deg,#6c7cff,#8a6bff);
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+button:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 0 15px rgba(110,130,255,.6);
+
+}
+
+/* footer */
+
+.footer{
+
+margin-top:18px;
+font-size:12px;
+opacity:.6;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-card">
+
+<img src="logo.png" class="logo">
+
+<h1>Login Sistem</h1>
+<div class="subtitle">SPPG Wilayah Simalungun</div>
+
+<div class="input">
+<input type="email" id="email" placeholder="Email">
+</div>
+
+<div class="input">
+<input type="password" id="password" placeholder="Password">
+</div>
+
+<button onclick="login()">Masuk</button>
+
+<div class="footer">
+Sistem resmi Koordinator Wilayah
+</div>
+
+</div>
+
+</body>
+</html>
